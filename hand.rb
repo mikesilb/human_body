@@ -19,9 +19,3 @@ class Hand
     puts "#{@name} is now relaxed"
   end
 end
-
-rh = Hand.new("right hand")
-lh = Hand.new("left hand")
-rh.clench_fist()
-lh.extend_fingers()
-rh.relax()

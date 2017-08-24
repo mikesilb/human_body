@@ -1,7 +1,6 @@
 require_relative 'Finger'
 require_relative 'Hand'
 
-
 thumb = Finger.new("thumb")
 pointer = Finger.new("pointer")
 middle = Finger.new("middle")
