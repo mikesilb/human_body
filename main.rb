@@ -21,4 +21,5 @@ lh.extend_fingers
 rh.relax
 my_face.stare
 my_face.wink
+my_face.neutralize
 my_face.smirk
