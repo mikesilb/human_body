@@ -8,22 +8,22 @@ class Finger
     @bent = false
   end
 
-  def wiggle()
+  def wiggle
     @wiggled = true
     puts "#{@name} finger is wiggling"
   end
 
-  def point()
+  def point
     @pointing = true
     puts "#{@name} finger is pointing"
   end
 
-  def bend()
+  def bend
     @bent = true
     puts "#{@name} finger is bending"
   end
 
-  def rest()
+  def rest
     @wiggled = false
     @pointing = false
     puts "#{@name} finger is now in a resting state"
