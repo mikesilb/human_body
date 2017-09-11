@@ -5,15 +5,15 @@ class Hand
     @fist = false
     @full_extended = false
   end
-  def clench_fist()
+  def clench_fist
     @fist = true
     puts "#{@name} has a clenched fist"
   end
-  def extend_fingers()
+  def extend_fingers
     @full_extended = true
     puts "#{@name}'s fingers are fully extended"
   end
-  def relax()
+  def relax
     @fist = false
     @full_extended = false
     puts "#{@name} is now relaxed"
