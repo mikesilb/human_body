@@ -14,7 +14,7 @@ class Leg
     @back_kicking = false
   end
 
-  def extend
+  def extend_leg
     @full_extended = true
     @forward_stepping = false
     @backward_stepping = false
