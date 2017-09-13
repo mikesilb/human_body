@@ -1,5 +1,6 @@
 class Arm
   attr_accessor :name, :full_extended, :muscle_contracted, :punching, :karate_chopping
+
   def initialize(name)
     @name = name
     @muscle_contracted = false
@@ -13,7 +14,7 @@ class Arm
     @karate_chopping = false
     puts "#{@name} has a clenched fist"
   end
-  def extend_arm
+  def extend
     @full_extended = true
     @muscle_contracted = false
     @punching = false
