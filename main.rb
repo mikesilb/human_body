@@ -1,8 +1,10 @@
 require_relative 'Finger'
 require_relative 'Hand'
+require_relative 'Head'
 require_relative 'Face'
 require_relative 'Arm'
 require_relative 'Leg'
+
 
 thumb = Finger.new("thumb")
 pointer = Finger.new("pointer")
@@ -16,6 +18,7 @@ la = Arm.new("left arm")
 rl = Leg.new("right leg")
 ll = Leg.new("left leg")
 my_face = Face.new
+my_head = Head.new
 
 
 pinkie.wiggle
@@ -28,10 +31,14 @@ rh.clench_fist
 ra.flex_muscle
 lh.extend_fingers
 rh.relax
+my_head.headbang(10)
 ll.step_forward
 ll.kick_forward
+my_head.look("up")
 rl.kick_side
+my_head.look("right")
 my_face.stare
+my_head.nod("no")
 la.throw_punch
 ra.karate_chop
 my_face.wink
