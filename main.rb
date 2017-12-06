@@ -11,8 +11,9 @@ pointer = Finger.new("pointer")
 middle = Finger.new("middle")
 ring = Finger.new("ring")
 pinkie = Finger.new("pinkie")
-rh = Hand.new("right hand")
-lh = Hand.new("left hand")
+fingers_in_hand = [thumb, pointer, middle, ring, pinkie]
+rh = Hand.new("right hand", fingers_in_hand)
+lh = Hand.new("left hand", fingers_in_hand)
 ra = Arm.new("right arm")
 la = Arm.new("left arm")
 rl = Leg.new("right leg")
@@ -21,11 +22,12 @@ my_face = Face.new
 my_head = Head.new
 
 
-pinkie.wiggle
-pinkie.rest
-pinkie.point
-pinkie.wiggle
-pinkie.rest
+rh.fingers[4].wiggle
+rh.fingers[4].rest
+lh.fingers[1].point
+lh.fingers[0].wiggle
+lh.fingers[0].rest
+lh.fingers[1].rest
 rl.extend_leg
 rh.clench_fist
 ra.flex_muscle
