@@ -1,7 +1,8 @@
 class Hand
-  attr_accessor :name, :fist, :full_extended
-  def initialize(name)
+  attr_accessor :name, :fingers, :fist, :full_extended
+  def initialize(name, fingers)
     @name = name
+    @fingers = fingers
     @fist = false
     @full_extended = false
   end
