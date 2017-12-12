@@ -4,6 +4,11 @@ require_relative 'Head'
 require_relative 'Face'
 require_relative 'Arm'
 require_relative 'Leg'
+require_relative 'Eye'
+require_relative 'Nose'
+require_relative 'Ear'
+require_relative 'Mouth'
+require 'pry'
 
 
 thumb = Finger.new("thumb")
@@ -18,8 +23,18 @@ ra = Arm.new("right arm")
 la = Arm.new("left arm")
 rl = Leg.new("right leg")
 ll = Leg.new("left leg")
-my_face = Face.new
-my_head = Head.new
+# binding.pry
+parts_of_face = {
+  right_eye: Eye.new("blue"),
+  left_eye: Eye.new("blue"),
+  nose: Nose.new,
+  mouth: Mouth.new,
+  right_ear: Ear.new,
+  left_ear: Ear.new
+}
+
+my_face = Face.new(parts_of_face)
+my_head = Head.new(my_face)
 
 
 rh.fingers[4].wiggle
@@ -36,14 +51,19 @@ rh.relax
 my_head.headbang(10)
 ll.step_forward
 ll.kick_forward
-my_head.look("up")
+parts_of_face[:right_eye].look("up")
+parts_of_face[:left_eye].look("up")
 rl.kick_side
-my_head.look("right")
-my_face.stare
+parts_of_face[:right_eye].look("right")
+parts_of_face[:left_eye].look("right")
+parts_of_face[:right_eye].look("right")
+parts_of_face[:left_eye].look("right")
+parts_of_face[:right_eye].stare
+parts_of_face[:left_eye].stare
 my_head.nod("no")
 la.throw_punch
 ra.karate_chop
-my_face.wink
+parts_of_face[:right_eye].wink
 my_face.neutralize
 la.relax
 ra.relax

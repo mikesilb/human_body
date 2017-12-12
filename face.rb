@@ -1,16 +1,19 @@
 class Face
-  attr_accessor :smiling, :winking, :blowingkiss, :smirking, :frowing, :pouting,
-                :shutting_eyes, :staring
+  attr_accessor :smiling, :blowingkiss, :smirking, :frowing, :pouting, :right_eye,
+  :left_eye, :nose, :mouth, :left_ear, :right_ear
 
-  def initialize
+  def initialize(all_those_parts)
+    @right_eye = all_those_parts[:right_eye]
+    @left_eye = all_those_parts[:left_eye]
+    @nose = all_those_parts[:nose]
+    @mouth = all_those_parts[:mouth]
+    @right_ear = all_those_parts[:right_ear]
+    @left_ear = all_those_parts[:left_ear]
     @smiling = false
-    @winking = false
     @blowingkiss = false
     @smirking = false
-    @frowining = false
+    @frowning = false
     @pouting = false
-    @shutting_eye = false
-    @staring = false
   end
 
   def smile
@@ -21,32 +24,21 @@ class Face
     puts "Smiling from cheek to cheek"
   end
 
-  def wink
-    @winking = true
-    @shutting_eye = false
-    puts "Wink Wink"
-  end
-
   def kissblow
     @blowingkiss = true
     @smiling = false
-    @winking = false
     @smirking = false
     @frowining = false
     @pouting = false
-    @staring = false
     puts "MUAHHHHHH"
   end
 
   def smirk
     @smirking = true
     @smiling = false
-    @winking = false
     @blowingkiss = false
     @frowining = false
     @pouting = false
-    @shutting_eye = false
-    @staring = false
     puts "Got a smirk on the face"
   end
 
@@ -66,38 +58,15 @@ class Face
     @smiling = false
     @frowning = false
     @smirking = false
-    @winking = false
-    @frowning = false
     puts "You look quite cute pouting like that.  What do you really want???"
   end
 
-  def eyes_shut
-    @shutting_eyes = true
-    @winking = false
-    @staring = false
-    puts "Nothing wrong with some shuteye when you really need it."
-  end
-
-  def stare
-    @staring = true
-    @smiling = false
-    @winking = false
-    @blowingkiss = false
-    @smirking = false
-    @frowining = false
-    @pouting = false
-    @shutting_eye = false
-    puts "DEEP STARE....."
-  end
   def neutralize
     @smiling = false
-    @winking = false
     @blowingkiss = false
     @smirking = false
-    @frowining = false
+    @frowning = false
     @pouting = false
-    @shutting_eye = false
-    @staring = false
     puts "Back to neutral expression"
   end
 end

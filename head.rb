@@ -1,32 +1,14 @@
 class Head
-  attr_accessor :nodding, :looking, :jutting
+  attr_accessor :the_face, :nodding, :jutting
 
-  def initialize
-    @nodding = false
-    @looking = false
-    @jutting = false
-  end
-
-  def look(direction)
-    @looking = true
+  def initialize(the_face)
+    @the_face = the_face;
     @nodding = false
     @jutting = false
-    print "Looking "
-    case direction
-    when "right"
-      puts "right"
-    when "left"
-      puts "left"
-    when "up"
-      puts "up"
-    when "down"
-      puts "down"
-    end
   end
 
   def nod(yesorno)
     @nodding = true
-    @looking = false
     @jutting = false
     case yesorno
     when "yes"
@@ -38,7 +20,6 @@ class Head
 
   def jut
     @nodding = false
-    @looking = false
     @jutting = true
     puts "Jutting the head forward"
   end
