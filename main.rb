@@ -8,7 +8,7 @@ require_relative 'Eye'
 require_relative 'Nose'
 require_relative 'Ear'
 require_relative 'Mouth'
-require 'pry'
+
 
 
 thumb = Finger.new("thumb")
@@ -24,19 +24,29 @@ la = Arm.new("left arm")
 rl = Leg.new("right leg")
 ll = Leg.new("left leg")
 # binding.pry
+parts_of_mouth = {
+  tongue: nil,
+  teeth: nil,
+  lips: nil,
+  palette: nil,
+  throat: nil
+}
+
 parts_of_face = {
   right_eye: Eye.new("blue"),
   left_eye: Eye.new("blue"),
   nose: Nose.new,
-  mouth: Mouth.new,
+  mouth: Mouth.new(parts_of_mouth),
   right_ear: Ear.new,
   left_ear: Ear.new
 }
 
+
+
 my_face = Face.new(parts_of_face)
 my_head = Head.new(my_face)
 
-
+parts_of_face[:mouth].smile
 rh.fingers[4].wiggle
 rh.fingers[4].rest
 lh.fingers[1].point
@@ -49,8 +59,10 @@ ra.flex_muscle
 lh.extend_fingers
 rh.relax
 my_head.headbang(10)
+parts_of_face[:mouth].pout
 ll.step_forward
 ll.kick_forward
+parts_of_face[:mouth].frown
 parts_of_face[:right_eye].look("up")
 parts_of_face[:left_eye].look("up")
 rl.kick_side
@@ -64,7 +76,7 @@ my_head.nod("no")
 la.throw_punch
 ra.karate_chop
 parts_of_face[:right_eye].wink
-my_face.neutralize
+parts_of_face[:mouth].neutralize
 la.relax
 ra.relax
-my_face.smirk
+parts_of_face[:mouth].smirk
