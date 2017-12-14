@@ -50,6 +50,7 @@ parts_of_face[:mouth].smile
 rh.fingers[4].wiggle
 rh.fingers[4].rest
 lh.fingers[1].point
+parts_of_face[:nose].congested
 lh.fingers[0].wiggle
 lh.fingers[0].rest
 lh.fingers[1].rest
@@ -80,3 +81,4 @@ parts_of_face[:mouth].neutralize
 la.relax
 ra.relax
 parts_of_face[:mouth].smirk
+parts_of_face[:nose].snort
