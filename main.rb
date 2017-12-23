@@ -8,6 +8,13 @@ require_relative 'Eye'
 require_relative 'Nose'
 require_relative 'Ear'
 require_relative 'Mouth'
+require_relative 'Tongue'
+require_relative 'Throat'
+require_relative 'Lips'
+require_relative 'Palette'
+require_relative 'Teeth'
+
+
 
 
 
@@ -25,11 +32,11 @@ rl = Leg.new("right leg")
 ll = Leg.new("left leg")
 # binding.pry
 parts_of_mouth = {
-  tongue: nil,
-  teeth: nil,
-  lips: nil,
-  palette: nil,
-  throat: nil
+  tongue: Tongue.new,
+  teeth: Teeth.new,
+  lips: Lips.new,
+  palette: Palette.new,
+  throat: Throat.new
 }
 
 parts_of_face = {
@@ -76,6 +83,8 @@ parts_of_face[:left_eye].stare
 my_head.nod("no")
 la.throw_punch
 ra.karate_chop
+5.times {parts_of_face[:mouth].chew}
+parts_of_face[:mouth].swallow
 parts_of_face[:right_eye].wink
 parts_of_face[:mouth].neutralize
 la.relax
