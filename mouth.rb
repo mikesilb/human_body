@@ -1,5 +1,5 @@
 class Mouth
-  attr_accessor :smiling, :blowingkiss, :smirking, :frowning, :pouting, :chewing,
+  attr_accessor :lips, :tongue, :teeth, :palette, :throat, :smiling, :blowingkiss, :smirking, :frowning, :pouting, :chewing,
   :swallowing
 
   def initialize(parts_of_the_mouth)
@@ -16,50 +16,81 @@ class Mouth
     @chewing = false
     @swallowing = false
   end
-  
+
   def smile
     @smiling = true
     @smirking = false
     @frowining = false
     @pouting = false
+    @chewing = false
+    @swallowing = false
     puts "Smiling from cheek to cheek"
   end
 
   def kissblow
     @blowingkiss = true
+    @lips.kissblow
     @smiling = false
     @smirking = false
     @frowining = false
     @pouting = false
-    puts "MUAHHHHHH"
+    @chewing = false
+    @swallowing = false
   end
 
   def smirk
     @smirking = true
+    @lips.smirk
     @smiling = false
     @blowingkiss = false
     @frowining = false
     @pouting = false
-    puts "Got a smirk on the face"
+    @chewing = false
+    @swallowing = false
   end
 
   def frown
     @frowning = true
     @smiling = false
-    @winking = false
     @blowingkiss = false
     @smirking = false
     @pouting = false
     @staring = false
+    @chewing = false
+    @swallowing = false
     puts "Must be feeling kinda sad"
   end
 
   def pout
     @pouting = true
+    @lips.pout
     @smiling = false
     @frowning = false
     @smirking = false
-    puts "You look quite cute pouting like that.  What do you really want???"
+    @chewing = false
+    @swallowing = false
+  end
+
+  def chew
+    @chewing = true
+    @teeth.chew
+    @smiling = false
+    @blowingkiss = false
+    @smirking = false
+    @frowning = false
+    @pouting = false
+    @swallowing = false
+  end
+
+  def swallow
+    @swallowing = true
+    @throat.swallow
+    @chewing = false
+    @smiling = false
+    @blowingkiss = false
+    @smirking = false
+    @frowning = false
+    @pouting = false
   end
 
   def neutralize
@@ -68,6 +99,8 @@ class Mouth
     @smirking = false
     @frowning = false
     @pouting = false
+    @chewing = false
+    @swallowing = false
     puts "Back to neutral expression"
   end
 end
