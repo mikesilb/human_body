@@ -1,6 +1,6 @@
 class Mouth
   attr_accessor :lips, :tongue, :teeth, :palette, :throat, :smiling, :blowingkiss, :smirking, :frowning, :pouting, :chewing,
-  :swallowing
+  :swallowing, :speaking, :tasting
 
   def initialize(parts_of_the_mouth)
     @lips = parts_of_the_mouth[:lips]
@@ -15,6 +15,8 @@ class Mouth
     @pouting = false
     @chewing = false
     @swallowing = false
+    @speaking = false
+    @tasting = false
   end
 
   def smile
@@ -24,6 +26,8 @@ class Mouth
     @pouting = false
     @chewing = false
     @swallowing = false
+    @speaking = false
+    @tasting = false
     puts "Smiling from cheek to cheek"
   end
 
@@ -36,6 +40,8 @@ class Mouth
     @pouting = false
     @chewing = false
     @swallowing = false
+    @speaking = false
+    @tasting = false
   end
 
   def smirk
@@ -47,6 +53,8 @@ class Mouth
     @pouting = false
     @chewing = false
     @swallowing = false
+    @speaking = false
+    @tasting = false
   end
 
   def frown
@@ -58,6 +66,8 @@ class Mouth
     @staring = false
     @chewing = false
     @swallowing = false
+    @speaking = false
+    @tasting = false
     puts "Must be feeling kinda sad"
   end
 
@@ -69,6 +79,8 @@ class Mouth
     @smirking = false
     @chewing = false
     @swallowing = false
+    @speaking = false
+    @tasting = false
   end
 
   def chew
@@ -80,6 +92,8 @@ class Mouth
     @frowning = false
     @pouting = false
     @swallowing = false
+    @speaking = false
+    @tasting = false
   end
 
   def swallow
@@ -91,6 +105,36 @@ class Mouth
     @smirking = false
     @frowning = false
     @pouting = false
+    @speaking = false
+    @tasting = false
+  end
+
+  def taste
+    @tasting = true
+    @tongue.taste
+    @chewing = false
+    @smiling = false
+    @blowingkiss = false
+    @smirking = false
+    @frowning = false
+    @pouting = false
+    @speaking = false
+    @swallowing = false
+  end
+
+  def speak(input)
+    @speaking = true
+    @lips.move
+    @throat.voice_vibrate
+    puts input
+    @tasting = false
+    @chewing = false
+    @smiling = false
+    @blowingkiss = false
+    @smirking = false
+    @frowning = false
+    @pouting = false
+    @swallowing = false
   end
 
   def neutralize
@@ -101,6 +145,8 @@ class Mouth
     @pouting = false
     @chewing = false
     @swallowing = false
+    @speaking = false
+    @tasting = false
     puts "Back to neutral expression"
   end
 end

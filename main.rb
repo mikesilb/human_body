@@ -83,6 +83,7 @@ parts_of_face[:left_eye].stare
 my_head.nod("no")
 la.throw_punch
 ra.karate_chop
+parts_of_face[:mouth].taste
 5.times {parts_of_face[:mouth].chew}
 parts_of_face[:mouth].swallow
 parts_of_face[:right_eye].wink
@@ -91,3 +92,4 @@ la.relax
 ra.relax
 parts_of_face[:mouth].smirk
 parts_of_face[:nose].snort
+parts_of_face[:mouth].speak("HEY NOW!!!")

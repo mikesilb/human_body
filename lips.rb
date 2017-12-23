@@ -8,4 +8,7 @@ class Lips
   def smirk
     puts "Got a smirk on the face"
   end
+  def move
+    puts "Lips gotta move"
+  end
 end
